@@ -8,10 +8,10 @@ spring:
                   enabled: true
                   lower-case-service-id: true
             routes:
-            - id: testdemo
-              uri: lb://testdemo
+            - id: musicservice
+              uri: lb://musicservice
               predicates:
-              - Path=/demo/**
+                - Path=/api/music/**
               filters: StripPrefix=1 #忽略第一层
             - id: userservice
               uri: lb://userservice
@@ -23,7 +23,6 @@ spring:
               predicates:
               - Path=/api/comment/**
               filters: StripPrefix=1 #忽略第一层
-
 server:
     port: 8082
 
