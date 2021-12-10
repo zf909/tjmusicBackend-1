@@ -3,10 +3,7 @@ package com.music.commentservice.controller;
 import com.music.commentservice.model.Comment;
 import com.music.commentservice.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,12 +25,29 @@ public class CommentController {
         return commentService.getComment();
     }
 
-
-
-    @GetMapping("/get_comment/{commentId}")
-    public Comment findUserById(@PathVariable Integer commentId) {
-        return commentService.getCommentById(commentId);
+    @PostMapping("/add_comment")
+    public Comment addComment(@RequestBody Comment comment) {
+        return commentService.addComment(comment);
     }
 
 
+    @GetMapping("/get_comment_by_Id/{commentId}")
+    public Comment findCommentByCommentId(@PathVariable Integer commentId) {
+        return commentService.getCommentById(commentId);
+    }
+
+    @GetMapping("/delete_comment_by_Id/{commentId}")
+    public Comment deleteCommentByCommentId(@PathVariable Integer commentId) {
+        return commentService.deleteCommentById(commentId);
+    }
+
+    @GetMapping("/get_comment_by_songsId/{songsId}")
+    public Comment findCommentBySongsId(@PathVariable Integer songsId) {
+        return commentService.getCommentBySongsId(songsId);
+    }
+
+    @GetMapping("/get_comment_by_userId/{userId}")
+    public Comment findCommentByUserId(@PathVariable Integer userId) {
+        return commentService.getCommentByUserId(userId);
+    }
 }

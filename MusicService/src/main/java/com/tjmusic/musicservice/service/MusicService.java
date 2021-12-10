@@ -15,9 +15,16 @@ public class MusicService {
         return musictRepository.findAll();
     }
 
+    public Music getSongsBySongsName(String songsName){
+        return musictRepository.findMusicBySongsName(songsName);
+    }
+
+    public Music getSongsByFuzzySongsName(String songsName){
+        return musictRepository.findMusicBySongsNameLike(songsName);
+    }
 
 
-    public Music getCommentById(Integer songsId){
+    public Music getSongsById(Integer songsId){
         return musictRepository.findMusicBySongsId(songsId);
     }
 

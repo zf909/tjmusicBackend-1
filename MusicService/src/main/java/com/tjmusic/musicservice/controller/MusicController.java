@@ -27,11 +27,20 @@ public class MusicController {
         return musicService.getMusic();
     }
 
+    @GetMapping("/get_music_by_name/{songsName}")
+    public Music findSongsBySongsName(@PathVariable String songsName) {
+        return musicService.getSongsBySongsName(songsName);
+    }
+
+    @GetMapping("/get_music_by_name_fuzzy/{songsName}")
+    public Music findSongsByFuzzySongsName(@PathVariable String songsName) {
+        return musicService.getSongsByFuzzySongsName("%"+songsName+"%");
+    }
 
 
-    @GetMapping("/get_music/{songsId}")
-    public Music findUserById(@PathVariable Integer commentId) {
-        return musicService.getCommentById(commentId);
+    @GetMapping("/get_music_by_songsId/{songsId}")
+    public Music findSongsById(@PathVariable Integer songsId) {
+        return musicService.getSongsById(songsId);
     }
 
 

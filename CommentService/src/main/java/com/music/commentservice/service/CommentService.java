@@ -23,8 +23,19 @@ public class CommentService {
         return commentRepository.findAll();
     }
 
+    public Comment addComment(Comment comment){
+        return commentRepository.save(comment);
+    }
 
-
+    public Comment getCommentBySongsId(Integer songsId){
+        return commentRepository.findCommentBySongsId(songsId);
+    }
+    public Comment getCommentByUserId(Integer userId){
+        return commentRepository.findCommentByUserId(userId);
+    }
+    public Comment deleteCommentById(Integer commentId){
+        return commentRepository.deleteCommentByCommentId(commentId);
+    }
     public Comment getCommentById(Integer commentId){
         return commentRepository.findCommentByCommentId(commentId);
     }
