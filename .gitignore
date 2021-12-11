@@ -4,7 +4,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 /CommentService/src/main/resources/application.properties
-/UserService/src/main/resources/application.properties
+/UserServer/src/main/resources/application.properties
 /MusicService/src/main/resources/application.properties
 ### STS ###
 .apt_generated
