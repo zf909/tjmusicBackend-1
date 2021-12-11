@@ -3,7 +3,9 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-/src/main/resources/application.properties
+/CommentService/src/main/resources/application.properties
+/UserService/src/main/resources/application.properties
+/MusicService/src/main/resources/application.properties
 ### STS ###
 .apt_generated
 .classpath
