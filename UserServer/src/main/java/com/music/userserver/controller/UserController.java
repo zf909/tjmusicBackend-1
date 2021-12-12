@@ -5,6 +5,7 @@ import com.music.userserver.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -17,7 +18,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-    @Autowired
+    @Resource
     private UserService userService;
 
     @GetMapping("/getall")
@@ -31,7 +32,7 @@ public class UserController {
     }
 
     @GetMapping("/get_user/{userId}")
-    public User findUserById(@PathVariable Integer userId) {
+    public User findUserById(@PathVariable("userId") Integer userId) {
         return userService.getUserById(userId);
     }
 
