@@ -33,6 +33,11 @@ spring:
              predicates:
              - Path=/api/songslist/**
              filters: StripPrefix=1 #忽略第一层
+            - id: communityservice
+              uri: lb://communityservice
+              predicates:
+              - Path=/api/community/**
+              filters: StripPrefix=1 #忽略第一层
 server:
     port: 8082
 
