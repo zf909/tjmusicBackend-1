@@ -9,7 +9,7 @@ import com.tjmusic.musicservice.model.Music;
 @Repository
 public interface MusicRepository extends JpaRepository<Music,Integer> {
 
-    public Music findMusicBySongsNameLike(String songsName);
-    public Music findMusicBySongsName(String songsName);
-    public Music findMusicBySongsId(Integer songsId);
+    Music findMusicBySongsNameLike(String songsName);
+    Music findMusicBySongsName(String songsName);
+    Music findMusicBySongsId(Integer songsId);
 }

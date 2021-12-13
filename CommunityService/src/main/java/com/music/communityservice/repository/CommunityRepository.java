@@ -8,6 +8,6 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 // DAO Database Access Object
 @Repository
 public interface CommunityRepository extends JpaRepository<Community,Integer> {
-    public Community findCommunityByMomentId(Integer momentId);
+    Community findCommunityByMomentId(Integer momentId);
 }
 
