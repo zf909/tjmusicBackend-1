@@ -17,22 +17,22 @@ public class CommunityController {
     @Autowired
     private CommunityService communityService;
 
-    @GetMapping()
+    @GetMapping("/getall")
     public List<Community> getAllCommunity() {
         return communityService.getCommunity();
     }
 
-    @GetMapping("/{momentId}")
+    @GetMapping("/getbyid/{momentId}")
     public Community findCommunityById(@PathVariable Integer momentId) {
         return communityService.getCommunityById(momentId);
     }
 
-    @PostMapping("/{community}")
+    @PostMapping("/post_community")
     public Community addCommunity(@RequestBody Community community) {
         return communityService.addCommunity(community);
     }
 
-    @DeleteMapping("/{community}")
+    @DeleteMapping("/delete_community")
     public void deleteCommunity(@RequestBody Community community) {
         communityService.deleteCommunity(community);
     }
