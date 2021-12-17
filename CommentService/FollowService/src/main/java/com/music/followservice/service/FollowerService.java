@@ -5,6 +5,7 @@ package com.music.followservice.service;
 
 import com.music.followservice.model.FollowerEntity;
 import com.music.followservice.model.User;
+import com.music.followservice.model.UserEntity;
 import com.music.followservice.repository.FollowerRepository;
 import com.music.followservice.repository.UserRepository;
 
@@ -44,8 +45,8 @@ public class FollowerService {
     public FollowerEntity addfollow(FollowerEntity followerEntity)  {
         Integer FocusId = followerEntity.getFocusId();
         Integer FansId = followerEntity.getFansId();
-        User FocusOptional = userRepository.findUserByUserId(FocusId);
-        User FansOptional = userRepository.findUserByUserId(FansId);
+        UserEntity FocusOptional = userRepository.findUserEntityByUserId(FocusId);
+        UserEntity FansOptional = userRepository.findUserEntityByUserId(FansId);
         Optional<FollowerEntity> followerOptional = followerRepository.findById(FocusId,FansId);
         if(FocusOptional==null){
             throw new IllegalStateException("ID为 " + FocusId+ " 的用户不存在！");

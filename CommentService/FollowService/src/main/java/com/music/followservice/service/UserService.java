@@ -2,6 +2,7 @@ package com.music.followservice.service;
 
 
 import com.music.followservice.model.User;
+import com.music.followservice.model.UserEntity;
 import com.music.followservice.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,22 +21,22 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public List<User> getUser(){
+    public List<UserEntity> getUser(){
         return userRepository.findAll();
     }
 
-    public User addUser(User user){
+    public UserEntity addUser(UserEntity user){
         return userRepository.save(user);
     }
 
-    public User getUserById(Integer userId){
-        return userRepository.findUserByUserId(userId);
+    public UserEntity getUserById(Integer userId){
+        return userRepository.findUserEntityByUserId(userId);
     }
 
     public String userLogin(Integer userId,String userPassword){
-        if(userRepository.findUserByUserId(userId)==null)
+        if(userRepository.findUserEntityByUserId(userId)==null)
             return "-1";
-        else if(userRepository.findUserByUserIdAndUserPassword(userId,userPassword)==null)
+        else if(userRepository.findUserEntityByUserIdAndUserPassword(userId,userPassword)==null)
             return "401";
         else
             return "200";

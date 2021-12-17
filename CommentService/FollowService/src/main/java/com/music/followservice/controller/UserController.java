@@ -2,6 +2,7 @@ package com.music.followservice.controller;
 
 
 import com.music.followservice.model.User;
+import com.music.followservice.model.UserEntity;
 import com.music.followservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
@@ -27,17 +28,17 @@ public class UserController {
 
     @GetMapping("/getall")
     @Cacheable(value = "user-get")
-    public List<User> getAllUser() {
+    public List<UserEntity> getAllUser() {
         return userService.getUser();
     }
 
     @PostMapping("/add_user")
-    public User addUser(@RequestBody User user) {
+    public UserEntity addUser(@RequestBody UserEntity user) {
         return userService.addUser(user);
     }
 
     @GetMapping("/get_user/{userId}")
-    public User findUserById(@PathVariable Integer userId) {
+    public UserEntity findUserById(@PathVariable Integer userId) {
         return userService.getUserById(userId);
     }
 
