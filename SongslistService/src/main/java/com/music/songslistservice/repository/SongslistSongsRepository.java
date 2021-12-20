@@ -1,9 +1,8 @@
-package com.example.tjmusic.repository;
+package com.music.songslistservice.repository;
 
-import com.example.tjmusic.model.SongslistCollectorEntity;
-import com.example.tjmusic.model.SongslistEntity;
-import com.example.tjmusic.model.SongslistSongsEntity;
-import com.example.tjmusic.model.SongslistSongsEntityPK;
+
+import com.music.songslistservice.model.SongslistSongsEntity;
+import com.music.songslistservice.model.SongslistSongsEntityPK;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

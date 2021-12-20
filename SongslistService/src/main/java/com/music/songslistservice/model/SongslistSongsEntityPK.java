@@ -1,4 +1,4 @@
-package com.example.tjmusic.model;
+package com.music.songslistservice.model;
 
 import javax.persistence.Column;
 import javax.persistence.Id;

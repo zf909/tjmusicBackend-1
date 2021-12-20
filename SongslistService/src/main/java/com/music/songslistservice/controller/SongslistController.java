@@ -1,9 +1,9 @@
 package com.music.songslistservice.controller;
 
-import com.example.tjmusic.model.FollowerEntity;
-import com.example.tjmusic.model.SongslistEntity;
-import com.example.tjmusic.repository.SongslistRepository;
-import com.example.tjmusic.service.SongslistService;
+
+import com.music.songslistservice.service.SongslistService;
+import com.music.songslistservice.model.SongslistEntity;
+import com.music.songslistservice.repository.SongslistRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("songslist")
+@CrossOrigin
 public class SongslistController {
     @Autowired
     private SongslistRepository songslistRepository;
@@ -22,7 +23,10 @@ public class SongslistController {
     public List<SongslistEntity> getlistByuserId(@PathVariable Integer CreatorId) {
         return songslistRepository.findSongslistEntityByCreatorId(CreatorId);
     }
-
+    @GetMapping("/getlist/{SongsListId}")
+    public SongslistEntity FindlistBySongsListId(@PathVariable Integer SongsListId) {
+        return songslistRepository.findSongslistEntityBySongsListId(SongsListId);
+    }
     @PostMapping("/add")
     public ResponseEntity<SongslistEntity> add(@RequestBody SongslistEntity songslist) {
 

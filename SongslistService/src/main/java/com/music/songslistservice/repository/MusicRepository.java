@@ -1,7 +1,7 @@
-package com.example.tjmusic.repository;
+package com.music.songslistservice.repository;
 
-import com.example.tjmusic.model.MusicEntity;
-import com.example.tjmusic.model.SongslistEntity;
+
+import com.music.songslistservice.model.MusicEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.example.tjmusic.model;
+package com.music.songslistservice.model;
 
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;

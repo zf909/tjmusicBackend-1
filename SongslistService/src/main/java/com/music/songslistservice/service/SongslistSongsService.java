@@ -1,9 +1,10 @@
-package com.example.tjmusic.service;
+package com.music.songslistservice.service;
 
-import com.example.tjmusic.model.SongslistCollectorEntity;
-import com.example.tjmusic.model.SongslistSongsEntity;
-import com.example.tjmusic.model.User;
-import com.example.tjmusic.repository.*;
+
+import com.music.songslistservice.model.SongslistSongsEntity;
+import com.music.songslistservice.repository.MusicRepository;
+import com.music.songslistservice.repository.SongslistRepository;
+import com.music.songslistservice.repository.SongslistSongsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,7 @@
-package com.example.tjmusic.repository;
+package com.music.songslistservice.repository;
 
-import com.example.tjmusic.model.SongslistEntity;
+
+import com.music.songslistservice.model.SongslistEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -15,7 +16,7 @@ public interface SongslistRepository extends JpaRepository<SongslistEntity, Inte
 //    public Optional<List<FollowerEntity>> findAllBysongs_list_id(Integer focusId);
     //public List<SongslistEntity> findSongslistEntityByUserId(Integer userId);
     List<SongslistEntity> findSongslistEntityByCreatorId(Integer CreatorId);
-
+    SongslistEntity findSongslistEntityBySongsListId(Integer SongsListId);
     //public SongslistEntity deleteSongslistEntityBySongsListId(Integer songslistId);
     boolean existsBySongsListId(Integer songslistId);
 

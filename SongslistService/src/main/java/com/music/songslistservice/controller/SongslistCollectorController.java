@@ -1,9 +1,9 @@
 package com.music.songslistservice.controller;
 
-import com.example.tjmusic.model.SongslistCollectorEntity;
 
-import com.example.tjmusic.service.SongslistCollectorService;
+import com.music.songslistservice.model.SongslistCollectorEntity;
 import com.music.songslistservice.repository.SongslistCollectorRepository;
+import com.music.songslistservice.service.SongslistCollectorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("listcollect")
+@CrossOrigin
 public class SongslistCollectorController {
     @Autowired
     private SongslistCollectorRepository songslistCollectorRepository;

@@ -24,15 +24,15 @@ spring:
               - Path=/api/comment/**
               filters: StripPrefix=1 #忽略第一层
             - id: followservice
-             uri: lb://followservice
-             predicates:
-             - Path=/api/follow/**
-             filters: StripPrefix=1 #忽略第一层
+              uri: lb://followservice
+              predicates:
+              - Path=/api/follow/**
+              filters: StripPrefix=1 #忽略第一层
             - id: songslistservice
-             uri: lb://songslistservice
-             predicates:
-             - Path=/api/songslist/**
-             filters: StripPrefix=1 #忽略第一层
+              uri: lb://songslistservice
+              predicates:
+              - Path=/api/songslist/**
+              filters: StripPrefix=1 #忽略第一层
             - id: communityservice
               uri: lb://communityservice
               predicates:

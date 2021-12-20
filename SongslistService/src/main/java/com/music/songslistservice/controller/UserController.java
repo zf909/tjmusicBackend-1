@@ -1,8 +1,8 @@
 package com.music.songslistservice.controller;
 
-import com.example.tjmusic.model.U;
-import com.example.tjmusic.model.User;
-import com.example.tjmusic.service.UserService;
+
+import com.music.songslistservice.model.User;
+import com.music.songslistservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
@@ -21,6 +21,7 @@ import java.util.List;
  **/
 @RestController
 @RequestMapping("/api/v1/user")
+@CrossOrigin
 public class UserController {
     @Autowired
     private UserService userService;
